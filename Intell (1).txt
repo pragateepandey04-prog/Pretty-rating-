@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Quick Question ✨</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        h1 {
+            color: #4a4a4a;
+            font-size: 1.6rem;
+            margin-bottom: 25px;
+        }
+
+        .rating-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn-rating {
+            background-color: #fff;
+            border: 2px solid #ff758c;
+            color: #ff758c;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-rating:hover {
+            background-color: #ff758c;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .result-screen {
+            display: none;
+            animation: fadeIn 0.8s ease-in-out forwards;
+        }
+
+        .result-screen h2 {
+            color: #d63384;
+            font-size: 2rem;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .heart-icon {
+            font-size: 3rem;
+            margin-top: 15px;
+            display: inline-block;
+            animation: pulse 1.2s infinite;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card" id="quizCard">
+        <div id="questionScreen">
+            <h1>How pretty do you find yourself today? ✨</h1>
+            <div class="rating-container">
+                <button class="btn-rating" onclick="showResult()">1 — A little bit</button>
+                <button class="btn-rating" onclick="showResult()">2 — Pretty good</button>
+                <button class="btn-rating" onclick="showResult()">3 — Very cute</button>
+                <button class="btn-rating" onclick="showResult()">4 — Extremely pretty</button>
+                <button class="btn-rating" onclick="showResult()">5 — Absolutely stunning</button>
+            </div>
+        </div>
+
+        <div id="resultScreen" class="result-screen">
+            <h2>You are the most prettiest person in the whole world I ever see! ❤️</h2>
+            <div class="heart-icon">💖</div>
+        </div>
+    </div>
+
+    <script>
+        function showResult() {
+            document.getElementById('questionScreen').style.display = 'none';
+            document.getElementById('resultScreen').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
+
